@@ -1,5 +1,5 @@
 Cypress.Commands.add('login', (username, password) => {
-  cy.visit('http://localhost:4200/')
+  cy.visit('https://tcs-fe-jet.vercel.app/auth/login')
   cy.get('#ultimatixLogin').type(username)
   cy.get('#passwordLogin').type(password)
   cy.get('#btnLogin').click()
@@ -10,7 +10,7 @@ describe('Ingreso a la pantalla de grupos de trabajo desde un usuario administra
 
   // Ingreso con usuario admin
   beforeEach(() => {
-    cy.login('2255136', 'P@ssw0rd')
+    cy.login('9999999', 'Tcs@2022!')
   });
 
   it('Test 1: Pagina de grupos de trabajo es accesible', () => {
@@ -29,7 +29,7 @@ describe('Intento de ingreso a la pantalla de grupos de trabajo desde un usuario
 
   // Ingreso con usuario no admin
   beforeEach(() => {
-    cy.login('2255138', 'P@ssw0rd')
+    cy.login('9999999', 'Tcs@2022!')
   });
 
   it('Test 1: Pagina de grupos de trabajo no es accesible', () => {
@@ -48,7 +48,7 @@ describe('Agregar nuevo grupo de trabajo', () => {
 
   // Ingreso con usuario admin
   beforeEach(() => {
-    cy.login('2255136', 'P@ssw0rd')
+    cy.login('9999999', 'Tcs@2022!')
   });
 
   const teamName = 'TCS Project'
@@ -129,7 +129,7 @@ describe('Intentar agregar un nuevo grupo de trabajo duplicado', () => {
 
   // Ingreso con usuario admin
   beforeEach(() => {
-    cy.login('2255136', 'P@ssw0rd')
+    cy.login('9999999', 'Tcs@2022!')
   });
 
   const teamName = 'TCS Project'
@@ -209,7 +209,7 @@ describe('Editar un grupo de trabajo', () => {
 
   // Ingreso con usuario admin
   beforeEach(() => {
-    cy.login('2255136', 'P@ssw0rd')
+    cy.login('9999999', 'Tcs@2022!')
   });
 
   const teamLeader = 'Jimmy Zumarraga'
@@ -242,7 +242,7 @@ describe('Eliminar un grupo de trabajo', () => {
 
   // Ingreso con usuario admin
   beforeEach(() => {
-    cy.login('2255136', 'P@ssw0rd')
+    cy.login('9999999', 'Tcs@2022!')
   });
 
   it('Test 1: Eliminar un grupo de trabajo', () => {
@@ -269,7 +269,7 @@ describe('Restablecer un grupo de trabajo', () => {
 
   // Ingreso con usuario admin
   beforeEach(() => {
-    cy.login('2255136', 'P@ssw0rd')
+    cy.login('9999999', 'Tcs@2022!')
   });
 
   it('Test 1: Restablecer un grupo de trabajo', () => {

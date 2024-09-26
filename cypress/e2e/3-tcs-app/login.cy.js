@@ -1,21 +1,25 @@
 Cypress.Commands.add('login', (username, password) => {
-    cy.visit('http://localhost:4200/')
+    cy.visit('https://tcs-fe.vercel.app/auth/login')
     cy.get('#ultimatixLogin').type(username)
     cy.get('#passwordLogin').type(password)
     cy.get('#btnLogin').click()
     // cy.url().should('contain', '/pages')
     cy.wait(1000)
   });
+  beforeEach(() => {
+    cy.visit('https://tcs-fe.vercel.app/auth/login')
+    cy.wait(2000)
+})
 
 describe('Demo de Testing de Inicio de Sesión', () => {
 
     //before()
     it('Test 1: Número de Ultimatix y Clave Correcto', () => {
         cy.visit('http://localhost:4200/'); // ir a la pagina principal 
-        cy.get('.mb-3 > .form-control').type("1111111");
-        cy.get('.input-group > .form-control').type("P@ssw0rd");
+        cy.get('.mb-3 > .form-control').type("9999999");
+        cy.get('.input-group > .form-control').type("Tcs@2022!");
         cy.get('.btn').click();
-        cy.get('.my-4').should('have.text','BIENVENIDO/A JUAN')
+        cy.get('.my-4').should('have.text','BIENVENIDO/A ADMIN')
     });
 
     it('Test 2: Número de Ultimatix y Clave Incorrectos', () => {
